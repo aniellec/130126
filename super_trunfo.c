@@ -136,17 +136,94 @@ int main() {
 
 
     //////
+
+
+    int opcao;
+
+    printf("Escolha uma opção:\n");
+    printf("1. Nome (exibir informações)\n");
+    printf("2. População\n");
+    printf("3. Área\n");
+    printf("4. PIB\n");
+    printf("5. Número de pontos turísticos\n");
+    printf("6. Densidade demográfica\n");
+    scanf("%d", &opcao);
+
+    switch (opcao) {
+        case 1:
+            printf("\n--- CARTA 1 ---\n");
+            printf("%s (%s)\n", carta1_nome, carta1_estado);
+            printf("População: %lu\n", carta1_num);
+            printf("Área: %.2f\n", carta1_area);
+            printf("PIB: %.2f\n", carta1_pib);
+            printf("Pontos turísticos: %d\n", carta1_pontos);
+
+            printf("\n--- CARTA 2 ---\n");
+            printf("%s (%s)\n", carta2_nome, carta2_estado);
+            printf("População: %lu\n", carta2_num);
+            printf("Área: %.2f\n", carta2_area);
+            printf("PIB: %.2f\n", carta2_pib);
+            printf("Pontos turísticos: %d\n", carta2_pontos);
+            
+        break;
+        case 2:
+            printf("\nComparacao de cartas (Atributo: Populacao):\n\n");
+            printf("Carta 1 - %s (%s): %lu\n", carta1_nome, carta1_estado, carta1_num);
+            printf("Carta 2 - %s (%s): %lu\n", carta2_nome, carta2_estado, carta2_num);
+
+            if (vencedor_populacao)
+                printf("Resultado: Carta 1 (%s) venceu!\n", carta1_nome);
+            else
+                printf("Resultado: Carta 2 (%s) venceu!\n", carta2_nome);
+            
+        break;
+        case 3:
+            printf("\nComparacao de cartas (Atributo: Area):\n\n");
+            printf("Carta 1 - %s (%s): %.2f\n", carta1_nome, carta1_estado, carta1_area);
+            printf("Carta 2 - %s (%s): %.2f\n", carta2_nome, carta2_estado, carta2_area);
+
+            if (vencedor_area)
+                printf("Resultado: Carta 1 (%s) venceu!\n", carta1_nome);
+            else
+                printf("Resultado: Carta 2 (%s) venceu!\n", carta2_nome);
     
-    printf("\nComparacao de cartas (Atributo: Populacao):\n\n");
+        break;
+        case 4:
+            printf("\nComparacao de cartas (Atributo: PIB):\n\n");
+            printf("Carta 1 - %s (%s): %.2f\n", carta1_nome, carta1_estado, carta1_pib);
+            printf("Carta 2 - %s (%s): %.2f\n", carta2_nome, carta2_estado, carta2_pib);
 
-    printf("Carta 1 - %s (%s): %lu\n", carta1_nome, carta1_estado, carta1_num);
-    printf("Carta 2 - %s (%s): %lu\n", carta2_nome, carta2_estado, carta2_num);
+            if (vencedor_pib)
+                printf("Resultado: Carta 1 (%s) venceu!\n", carta1_nome);
+            else
+                printf("Resultado: Carta 2 (%s) venceu!\n", carta2_nome);
+        break;
+        case 5:
+            printf("\nComparacao de cartas (Atributo: Pontos Turisticos):\n\n");
+            printf("Carta 1 - %s (%s): %d\n", carta1_nome, carta1_estado, carta1_pontos);
+            printf("Carta 2 - %s (%s): %d\n", carta2_nome, carta2_estado, carta2_pontos);
 
-    if (vencedor_populacao) {
-        printf("Resultado: Carta 1 (%s) venceu!\n", carta1_nome);
-    } else {
-        printf("Resultado: Carta 2 (%s) venceu!\n", carta2_nome);
-    }
+            if (vencedor_pontos)
+                printf("Resultado: Carta 1 (%s) venceu!\n", carta1_nome);
+            else
+                printf("Resultado: Carta 2 (%s) venceu!\n", carta2_nome);
+            
+        break;
+        case 6:
+            printf("\nComparacao de cartas (Atributo: Densidade Demografica):\n\n");
+            printf("Carta 1 - %s (%s): %.2f\n", carta1_nome, carta1_estado, carta1_densidade);
+            printf("Carta 2 - %s (%s): %.2f\n", carta2_nome, carta2_estado, carta2_densidade);
+
+            if (vencedor_densidade)
+                printf("Resultado: Carta 1 (%s) venceu!\n", carta1_nome);
+            else
+                printf("Resultado: Carta 2 (%s) venceu!\n", carta2_nome);
+        break;
+        default:
+            printf("Opção inválida\n");
+  }
+
+    
 
     return 0;
 }
