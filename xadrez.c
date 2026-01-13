@@ -35,5 +35,20 @@ int main() {
     } while (i < 8);
     printf("\n");
 
+    //cavalo
+
+    int j;
+    
+    i = 0;
+    for (i = 0; i < 1; i++) {
+
+        j = 0;
+        while (j < 2) {
+            printf("baixo, \n");
+            j++;
+        }
+        printf("esquerda\n");
+    }
+
     return 0;
 }
