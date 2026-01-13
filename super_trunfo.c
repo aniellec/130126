@@ -3,13 +3,16 @@
 #include <stdio.h>
 
 int main() {
-    int carta1_codigo;
+    char carta1_codigo[10];
+    char carta1_estado[10];
     char carta1_nome[20];
     unsigned long int carta1_num;
     float carta1_area;
     float carta1_pib;
     int carta1_pontos;
-    int carta2_codigo;
+    char carta2_codigo[10];
+    char carta2_estado[10];
+
     char carta2_nome[20];
     unsigned long int carta2_num;
     float carta2_area;
@@ -25,8 +28,10 @@ int main() {
     float carta2_poder;
 
     printf ("---CARTA 1---\n");
+    printf ("Estado:");
+    scanf ("%9s", carta1_estado);
     printf ("Codigo:");
-    scanf ("%d", &carta1_codigo);
+    scanf ("%9s", carta1_codigo);
     printf ("Nome:");
     scanf("%19s", carta1_nome);
     printf ("Populacao:");
@@ -39,7 +44,7 @@ int main() {
     scanf ("%d", &carta1_pontos);
 
     printf("Carta 1:\n");
-    printf("Codigo: %d\n", carta1_codigo);
+    printf("Codigo: %s\n", carta1_codigo);
     printf("Nome: %s\n", carta1_nome);
     printf("Populacao: %lu\n", carta1_num);
     printf("Area: %f\n", carta1_area);
@@ -63,8 +68,10 @@ int main() {
 
  
     printf ("\n---CARTA 2---\n");
+    printf ("Estado:");
+    scanf ("%9s", carta2_estado);
     printf ("Codigo:");
-    scanf ("%d", &carta2_codigo);
+    scanf ("%9s", carta2_codigo);
     printf ("Nome:");
     scanf("%19s", carta2_nome);
     printf ("Populacao:");
@@ -77,7 +84,7 @@ int main() {
     scanf ("%d", &carta2_pontos);
 
     printf("Carta 2:\n");
-    printf("Codigo: %d\n", carta2_codigo);
+    printf("Codigo: %s\n", carta2_codigo);
     printf("Nome: %s\n", carta2_nome);
     printf("Populacao: %lu\n", carta2_num);
     printf("Area: %f\n", carta2_area);
@@ -127,6 +134,19 @@ int main() {
     printf("Densidade Populacional (1=Carta1 vence, 0=Carta2 vence): %d\n", vencedor_densidade);
     printf("Super Poder (1=Carta1 vence, 0=Carta2 vence): %d\n", vencedor_superpoder);
 
+
+    //////
+    
+    printf("\nComparacao de cartas (Atributo: Populacao):\n\n");
+
+    printf("Carta 1 - %s (%s): %lu\n", carta1_nome, carta1_estado, carta1_num);
+    printf("Carta 2 - %s (%s): %lu\n", carta2_nome, carta2_estado, carta2_num);
+
+    if (vencedor_populacao) {
+        printf("Resultado: Carta 1 (%s) venceu!\n", carta1_nome);
+    } else {
+        printf("Resultado: Carta 2 (%s) venceu!\n", carta2_nome);
+    }
 
     return 0;
 }
