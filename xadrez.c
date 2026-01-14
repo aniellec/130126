@@ -6,48 +6,68 @@
 
 #include <stdio.h>
 
-int main() {
-    
-    int i;
+
 
     //torre
 
-    i = 0;
-    for(i=0; i < 5; i++) {
-        printf("direita, ");
+    void torre(int casas) {
+        if (casas == 0) return;
+
+        printf("direita\n");
+        torre(casas - 1);
     }
-    printf("\n");
 
     //bispo
 
-    i = 0;
-    while (i < 5) {
+    void bispo(int casas) {
+     if (casas == 0) return;
+
         printf("cima, direita\n");
-        i++;
+        bispo(casas - 1);
     }
 
     //rainha
 
-    i = 0;
-    do {
-        printf("esquerda, \n");
-        i++;
-    } while (i < 8);
+    void rainha(int casas) {
+        if (casas == 0) return;
+
+        printf("esquerda\n");
+        rainha(casas - 1);
+    }
+
+int main() {
+    int i, j;
+
+    torre(5);
     printf("\n");
 
-    //cavalo
+    bispo(5);
+    printf("\n");
 
-    int j;
-    
-    i = 0;
-    for (i = 0; i < 1; i++) {
+    // rainha
+    rainha(8);
+    printf("\n");
 
-        j = 0;
-        while (j < 2) {
-            printf("baixo, \n");
-            j++;
+    // bispo
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < 1; j++) {
+            printf("cima, direita\n");
         }
-        printf("esquerda\n");
+    }
+    printf("\n");
+
+    // cavalo
+    for (i = 0; i < 3; i++) {
+
+        if (i < 2) {
+            printf("cima\n");
+            continue;   // continua até completar os dois movimentos para cima
+        }
+
+        for (j = 0; j < 1; j++) {
+            printf("direita\n");
+            break;      // encerra após o movimento horizontal
+        }
     }
 
     return 0;
