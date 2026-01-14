@@ -28,6 +28,32 @@ int main(){
         printf("\n");
     }
 
+    int cone[5][5] = {
+        {0, 0, 1, 0, 0},
+        {0, 1, 1, 1, 0},
+        {1, 1, 1, 1, 1},
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0}
+    };
+
+    int cruz[5][5] = {
+        {0, 0, 1, 0, 0},
+        {0, 0, 1, 0, 0},
+        {1, 1, 1, 1, 1},
+        {0, 0, 1, 0, 0},
+        {0, 0, 1, 0, 0}
+    };
+
+    int octaedro[5][5] = {
+        {0, 0, 1, 0, 0},
+        {0, 1, 1, 1, 0},
+        {1, 1, 1, 1, 1},
+        {0, 1, 1, 1, 0},
+        {0, 0, 1, 0, 0}
+    };
+
+    int ponto_central = 2;
+
     int ponta_navio1_linha;
     int ponta_navio1_coluna;
     int ponta_navio2_linha;
@@ -183,9 +209,6 @@ int main(){
         tabuleiro[ponta_navio4_linha + i][ponta_navio4_coluna + i] = 3;
     }
 
-
-
-
     printf("Tabluleiro 4 navios: \n");
 
     for (i = 0; i < 10; i++) {
@@ -195,7 +218,14 @@ int main(){
         printf("\n");
     }
 
-    printf("\nFIM\n");
+    int origem_linha = 5;
+    int origem_colun    printf("\nTabuleiro com habilidade:\n");
+    for (i = 0; i < 10; i++) {
+        for (j = 0; j < 10; j++) {
+            printf("%d ", tabuleiro[i][j]);
+        }
+        printf("\n");
+    }
 
 
     return 0;
